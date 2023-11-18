@@ -37,7 +37,6 @@ function App() {
           <Route path="/my-tokens" element={<MyTokens/>} />
           </Routes>
           
-          <Footer />
         </Router>
       </div>
     );

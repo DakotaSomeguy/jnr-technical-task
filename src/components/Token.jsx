@@ -22,20 +22,16 @@ export default function Token({tokenData, onSelect }) {
         </div>
     
         {tokenData.changeDirectionUp ? 
-        (<div className="p-0.5 left-[296px] top-[19px] absolute bg-green-500 bg-opacity-10 rounded flex-col justify-start items-start gap-2.5 inline-flex">
-          <div className="relative">
-            <div className="left-[10px] top-0 absolute text-right text-green-500 text-xs font-bold font-['Inter']">
+        (<div className="relative">
+          <div className="left-[296px] top-[18px] absolute text-right text-green-500 text-xs font-bold font-['Inter'] bg-green-500 bg-opacity-10 p-1">
               {tokenData.change}
             </div>
-          </div>
         </div>): (
-            <div className="p-0.5 left-[296px] top-[19px] absolute bg-red-500 bg-opacity-10 rounded flex-col justify-start items-start gap-2.5 inline-flex">
             <div className="relative">
-              <div className="left-[10px] top-0 absolute text-right text-red-500 text-xs font-bold font-['Inter']">
+              <div className="left-[296px] top-[18px] absolute text-right text-red-500 text-xs font-bold font-['Inter'] bg-red-500 bg-opacity-10 p-1">
                 {tokenData.change}
               </div>
             </div>
-          </div>
         )}
       </div>
     )
