@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +15,120 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.header-body-wrapper {
+    min-height: calc(100vh - 127px);
+  }
+  
+  .footer-wrapper {
+    position: relative;
+    left: 0px;
+    right: 0px;
+  }
+  
+  /* Icon */
+  #icon {
+    display: inline-block;
+    color: #fff;
+    width: 49%;
+  }
+  
+  #icon img {
+    width: 50px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Basic site section */
+  .features {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .features__header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .features__header h2 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #777;
+  }
+  
+  .features__box-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .features__box {
+    text-align: center;
+    flex: 1;
+    margin-left: 5px;
+  }
+  .features__box img {
+    margin-bottom: 12px;
+    width: 80px;
+  }
+  .features__box h5 {
+    font-size: 20px;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  
+  header {
+    background: #222;
+    color: #fff;
+    padding: 10px 30px;
+  }
+  
+  footer {
+    margin-top: auto;
+    background: #222;
+    padding: 40px;
+    text-align: center;
+    color: #d8d8d8;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav {
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+  }
+  nav ul li span{
+    display: inline-block;
+  }
+  nav ul li a {
+    color: #fca910;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: 0.3s ease all;
+    margin-right: 10px;
+  }
+  nav ul li a:hover {
+    color: #fca910;
+    background: #444;
+  }
+  nav ul li a.active {
+    color: #fff;
+    background: #fca910;
+  }

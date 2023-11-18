@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
+// Components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Token from "./components/Token";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Header />
+      <Token index={"#1"} ticker={"BTC"} sharesTraded={"510.21 Bn"} priceTraded={"$26,123.21"} change={"1.50%"}/>
+      <Footer />
     </div>
   );
 }
