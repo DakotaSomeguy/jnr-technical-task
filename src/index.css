@@ -116,7 +116,7 @@ code {
     display: inline-block;
   }
   nav ul li a {
-    color: #fca910;
+    color: #fff;
     text-decoration: none;
     display: inline-block;
     padding: 10px 15px;
@@ -125,10 +125,9 @@ code {
     margin-right: 10px;
   }
   nav ul li a:hover {
-    color: #fca910;
+    color: #00ffa7;
     background: #444;
   }
   nav ul li a.active {
-    color: #fff;
-    background: #fca910;
+    color: #00ffa7;
   }

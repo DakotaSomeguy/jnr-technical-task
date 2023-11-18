@@ -1,4 +1,6 @@
 // the header
+import Nav from "./Nav";
+
 export default function Header( {isLoggedIn} ) {
   return (
     
@@ -7,6 +9,8 @@ export default function Header( {isLoggedIn} ) {
       <div id="icon">
         <img src="rocket.svg" alt="Icon" />
       </div>
+
+      <Nav />
     </header>
   );
 }

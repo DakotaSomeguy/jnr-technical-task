@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
-// Components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Token from "./components/Token";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Token from './components/Token';
+import MyTokens from './components/MyTokens';
+import Home from './components/Home'
 
 const tokenData = [
   {
@@ -26,17 +28,19 @@ const tokenData = [
 ];
 
 function App() {
-  return (
-    <div className="">
-      <Header />
-      {
-        tokenData.map((token) => (
-            <Token tokenData={token} />
-        ))
-      }
-      <Footer />
-    </div>
-  );
-}
+    return (
+      <div>
+        <Router>
+          <Header />
+          <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/my-tokens" element={<MyTokens/>} />
+          </Routes>
+          
+          <Footer />
+        </Router>
+      </div>
+    );
+  }
 
 export default App;

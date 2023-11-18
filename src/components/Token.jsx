@@ -1,6 +1,6 @@
-export default function Token({tokenData }) {
+export default function Token({tokenData, onSelect }) {
     return (
-        <div className="w-96 h-14 relative">
+        <div className="w-96 h-14 relative" onClick={onSelect}>
         <div className="w-96 h-14 left-0 top-0 absolute bg-zinc-800 rounded" />
         <div className="left-[24px] top-[21px] absolute text-white text-xs font-medium font-['Inter']">
           {tokenData.index}

@@ -9,7 +9,7 @@ export default function Nav({isLoggedIn}) {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/MyTokens">MyTokens</NavLink>
+          <NavLink to="/my-tokens">MyTokens</NavLink>
         </li>
       </ul>
     </nav>
