@@ -50,17 +50,19 @@ export default function Home() {
       })
       .then((listings) => {
         console.log(
-            listings[2].quote.USD.percent_change_24h * 100 >= 0 ? true : false
+            numeral(listings[2].quote.USD.percent_change_24h).format('0.00%')
         );
         // Return the mapped values
+        let id = 0
         return listings.map((listing) => {
+            id = id + 1
           return {
-            index: listing.id,
+            index:id,
             ticker: listing.symbol,
             sharesTraded: numeral(listing.quote.USD.volume_24h).format('0.[0]a'),
             priceTraded: currencyFormatter.format(listing.quote.USD.price, {code: 'USD'}),
             changeDirectionUp: listing.quote.USD.percent_change_24h * 100 >= 0 ? true : false,
-            change: listing.quote.USD.percent_change_24h * 100,
+            change: numeral(listing.quote.USD.percent_change_24h).format('0.00%')
           };
         });
       })
