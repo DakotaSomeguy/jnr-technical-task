@@ -30,7 +30,7 @@ export default function Home() {
   useEffect(() => {
     const apiKey = "0cb61b43-fe49-42ce-8e3a-e030fb104f24";
 
-    fetch("/api/v1/cryptocurrency/listings/latest?limit=20", {
+    fetch("/api-proxy/v1/cryptocurrency/listings/latest?limit=20", {
       method: "GET",
       headers: {
         "X-CMC_PRO_API_KEY": apiKey,
@@ -76,9 +76,39 @@ export default function Home() {
       });
   }, []);
 
-  const handleTokenSelect = (token) => {
-    addToken(token);
+//   const handleTokenSelect = (token) => {
+//     addToken(token);
+//   };
+
+const handleTokenSelect = async (token) => {
+    try {
+      const response = await fetch('http://127.0.0.1:3001/api/my-tokens', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(token),
+      });
+  
+      if (!response.ok) {
+        if (response.status === 409) {
+          console.error('Token already exists');
+          // Handle the case where the token already exists (show a notification, etc.)
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } else {
+        const newToken = await response.json();
+        console.log('Token added:', newToken);
+        // You can perform additional actions here if needed
+      }
+    } catch (error) {
+      console.error('Error adding token:', error);
+      // Handle error gracefully, show a notification, etc.
+    }
   };
+  
+  
 
   return loading ? (
     <p>Loading...</p>
